@@ -1,0 +1,33 @@
+name: basic_cleaning
+conda_env: conda.yml
+
+entry_points:
+  main:
+    parameters:
+
+      input_artifact:
+        description: Artifact file with version
+        type: string
+
+      output_artifact:
+        description: Artifact output to this component
+        type: string
+
+      output_type:
+        description: Artifact type to this component
+        type: string
+
+      output_description:
+        description: Artifact description to this component
+        type: string
+
+      min_price:
+        description: Minimum allowable price of input artifact data
+        type: float
+
+      max_price:
+        description: Maximum allowable price of output artifact data
+        type: float
+
+    command: >-
+        python run.py  --input_artifact {input_artifact}  --output_artifact {output_artifact}  --output_type {output_type}  --output_description {output_description}  --min_price {min_price}  --max_price {max_price}
